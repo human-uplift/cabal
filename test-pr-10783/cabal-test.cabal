@@ -1,0 +1,10 @@
+cabal-version:      3.0
+version:            0.1.0
+name:               cabal-test
+build-type:         Simple
+
+executable cabal-test
+    main-is:          Main.hs
+    build-depends:    base
+    hs-source-dirs:   app
+    default-language: Haskell2010
