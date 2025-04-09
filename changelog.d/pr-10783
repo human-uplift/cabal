@@ -1,0 +1,12 @@
+synopsis: Fix conflict between -haddock flag and other GHC options
+packages: cabal-install
+significance: bugfix
+
+description: {
+
+When documentation was enabled, the `-haddock` flag was prepended to GHC's program
+arguments, which caused it to override other GHC options like `-Wall -Werror`. This
+has been fixed by appending `-haddock` at the end of the existing arguments list
+instead, ensuring that other GHC options are not lost when documentation is enabled.
+
+}
