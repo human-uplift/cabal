@@ -1,0 +1,7 @@
+synopsis: Fix --enable-documentation swallowing GHC options
+description: >
+  When using --enable-documentation alongside other GHC options like --ghc-options="-Wall -Werror",
+  the -haddock flag was being prepended to the list of program arguments, and when combined using <>
+  (which is left-biased), -haddock would swallow all other arguments. This issue has been fixed by
+  appending -haddock to the end of the list of arguments instead.
+affected-tests: None
