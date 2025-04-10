@@ -2239,7 +2239,7 @@ elaborateInstallPlan
             addHaddockIfDocumentationEnabled :: ConfiguredProgram -> ConfiguredProgram
             addHaddockIfDocumentationEnabled cp@ConfiguredProgram{..} =
               if programId == "ghc" && elabBuildHaddocks
-                then cp{programOverrideArgs = "-haddock" : programOverrideArgs}
+                then cp{programOverrideArgs = programOverrideArgs ++ ["-haddock"]}
                 else cp
 
             elabPkgSourceLocation = srcloc
