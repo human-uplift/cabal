@@ -418,11 +418,11 @@ getCommonFlags globalFlags hooks commonFlags args = do
     ( lbi
     , commonFlags
         { setupDistPref = toFlag distPref
-        , setupCabalFilePath = setupCabalFilePath common' <> setupCabalFilePath commonFlags
+        , setupCabalFilePath = setupCabalFilePath commonFlags <> setupCabalFilePath common'
         , setupWorkingDir =
-            globalWorkingDir globalFlags
+            setupWorkingDir commonFlags
               <> setupWorkingDir common'
-              <> setupWorkingDir commonFlags
+              <> globalWorkingDir globalFlags
         , setupTargets = args
         }
     )
